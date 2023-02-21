@@ -6,9 +6,10 @@ function App() {
 
   const clickHandler = () => {   
 
-    win = window.open('http://localhost:3009',
+    win = window.open(undefined,
     '_blank',
     'location=yes,status=yes,resizable=yes,scrollbars=yes,width=600,height=800');
+    win.location.href = 'https://dim2a.github.io/slave/';
     interval = setInterval(() => {
       checkLocation();
     }, 1000);
