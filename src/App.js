@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  let win;
+  let interval;
+
+  const clickHandler = () => {   
+
+    win = window.open('http://localhost:3009',
+    '_blank',
+    'location=yes,status=yes,resizable=yes,scrollbars=yes,width=600,height=800');
+    interval = setInterval(() => {
+      checkLocation();
+    }, 1000);
+
+  };
+
+  const checkLocation = () => {
+    console.log('win.location?.origin: ', win.location?.origin);
+    if (win.location?.origin === window.origin) {
+      clearInterval(interval);
+      win.close();
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={clickHandler}>ClickMe!</button>
     </div>
   );
 }
