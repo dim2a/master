@@ -18,7 +18,7 @@ function App() {
 
   const checkLocation = () => {
     console.log('win.location?.origin: ', win.location?.origin);
-    if (win.location?.origin === window.origin) {
+    if (win.location?.href === window.location.href) {
       clearInterval(interval);
       win.close();
     }
