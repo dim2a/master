@@ -7,7 +7,7 @@ function App() {
   const clickHandler = async () => {
 
     await setTimeout(() => {
-      win = window.open('https://www.google.ru/',
+      win = window.open('https://temofeev.ru/',
         '_blank',
         'location=yes,status=yes,resizable=yes,scrollbars=yes,width=600,height=800');
         // win.location.href = 'https://dim2a.github.io/slave/';
@@ -23,7 +23,7 @@ function App() {
       win = window.open(undefined,
         '_blank',
         'location=yes,status=yes,resizable=yes,scrollbars=yes,width=600,height=800');
-        win.location.href = 'https://www.google.ru/';
+        win.location.href = 'https://temofeev.ru/';
         interval = setInterval(() => {
           checkLocation();
         }, 1000);
