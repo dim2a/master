@@ -4,16 +4,18 @@ function App() {
   let win;
   let interval;
 
-  const clickHandler = () => {   
+  const clickHandler = async() => {
 
-    win = window.open(undefined,
-    '_blank',
-    'location=yes,status=yes,resizable=yes,scrollbars=yes,width=600,height=800');
-    win.location.href = 'https://dim2a.github.io/slave/';
-    interval = setInterval(() => {
-      checkLocation();
-    }, 1000);
-
+    await setTimeout(() => {
+      win = window.open('https://dim2a.github.io/slave/',
+        '_blank',
+        'location=yes,status=yes,resizable=yes,scrollbars=yes,width=600,height=800');
+        // win.location.href = 'https://dim2a.github.io/slave/';
+        interval = setInterval(() => {
+          checkLocation();
+        }, 1000);
+    }, 500);
+    console.log('v: 0.1.0');
   };
 
   const checkLocation = () => {
@@ -25,8 +27,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <button onClick={clickHandler}>ClickMe!</button>
+    <div className="App" >
+      <button style={{width: '100px', height:'50px',}} onClick={clickHandler}>ClickMe!</button>
     </div>
   );
 }
